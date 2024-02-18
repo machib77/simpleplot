@@ -17,15 +17,25 @@ class HomePageView(TemplateView):
 class ChartGeneratorView(View):
     def post(self, request):
         # Retrieve data from POST request
-        number1 = float(request.POST.get("number1", 0))
-        number2 = float(request.POST.get("number2", 0))
-        number3 = float(request.POST.get("number3", 0))
+
+        rate_dict = {
+            "1Y": float(request.POST.get("1Y", 0)),
+            "2Y": float(request.POST.get("2Y", 0)),
+            "3Y": float(request.POST.get("3Y", 0)),
+            "4Y": float(request.POST.get("4Y", 0)),
+            "5Y": float(request.POST.get("5Y", 0)),
+            "6Y": float(request.POST.get("6Y", 0)),
+            "7Y": float(request.POST.get("7Y", 0)),
+            "8Y": float(request.POST.get("8Y", 0)),
+            "9Y": float(request.POST.get("9Y", 0)),
+            "10Y": float(request.POST.get("10Y", 0)),
+        }
 
         # Generate Plotly chart
         data = [
             go.Scatter(
-                x=["Number 1", "Number 2", "Number 3"],
-                y=[number1, number2, number3],
+                x=list(rate_dict.keys()),
+                y=list(rate_dict.values()),
                 mode="lines+markers",
             )
         ]

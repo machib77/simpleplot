@@ -1,17 +1,26 @@
-console.log("JavaScript AGAIN!")
-
 function initialRates() {
-    let num1 = 1;
-    let num2 = 3;
-    let num3 = 7;
 
-    document.getElementById('number1').value = num1;
-    document.getElementById('number2').value = num2;
-    document.getElementById('number3').value = num3;
+    let init_obj = {
+        '1Y': 1.0,
+        '2Y': 3.0,
+        '3Y': 4.0,
+        '4Y': 4.5,
+        '5Y': 4.8,
+        '6Y': 5.0,
+        '7Y': 5.1,
+        '8Y': 5.2,
+        '9Y': 5.3,
+        '10Y':5.35,
+    }
 
-    console.log(num1, num2, num3);
+    for (let key in init_obj) {
+        console.log(`Key: ${key}, Value: ${init_obj[key]}`)
+        document.getElementById(key).value = init_obj[key];
+    }
 
-    let inputElement = document.getElementById('number1');
+
+
+    let inputElement = document.getElementById('1Y');
     // Simulate an input event
     inputElement.dispatchEvent(new Event('change'));
     
