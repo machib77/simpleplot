@@ -1,0 +1,20 @@
+{% load static %}
+<html>
+    <head>
+        <title>Simple Curve Plot</title>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="https://unpkg.com/htmx.org/dist/htmx.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1><a href="{% url 'home' %}">Curve Maker</a></h1>
+        </header>
+    <div>
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+    <script src="{% static 'js/base.js' %}"></script>
+    </body>
+</html>

@@ -17,14 +17,16 @@ class HomePageView(TemplateView):
 class ChartGeneratorView(View):
     def post(self, request):
         # Retrieve data from POST request
-        number1 = int(request.POST.get("number1", 0))
-        number2 = int(request.POST.get("number2", 0))
-        number3 = int(request.POST.get("number3", 0))
+        number1 = float(request.POST.get("number1", 0))
+        number2 = float(request.POST.get("number2", 0))
+        number3 = float(request.POST.get("number3", 0))
 
         # Generate Plotly chart
         data = [
-            go.Bar(
-                x=["Number 1", "Number 2", "Number 3"], y=[number1, number2, number3]
+            go.Scatter(
+                x=["Number 1", "Number 2", "Number 3"],
+                y=[number1, number2, number3],
+                mode="lines+markers",
             )
         ]
         layout = go.Layout(title="Numbers Chart")
