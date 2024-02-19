@@ -39,7 +39,7 @@ class ChartGeneratorView(View):
                 mode="lines+markers",
             )
         ]
-        layout = go.Layout(title="Numbers Chart")
+        layout = go.Layout()
         fig = go.Figure(data=data, layout=layout)
 
         chart = fig.to_html(full_html=False, include_plotlyjs=False)

@@ -1,50 +1,54 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-    <h1>Homepage</h1>
     <br>
+    <div class="centered">
+        <h1>Spot Rates Plot</h1>
+        <br>
+    </div>
 
     <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <form id="data-form">
+        <div class="row graph-grid">
+            <div class="col">
+                <form id="data-form" class="">
                     {% csrf_token %}
-            
-                    <div>
-                        <label for="1Y">1Y</label>
-                        <input step="0.01" type="number" hx-post="{% url 'generate_chart' %}" hx-trigger="change" hx-target="#chart-container" name="1Y" id="1Y">
-                        <br>
-                        <label for="2Y">2Y</label>
-                        <input step="0.01" type="number" hx-post="{% url 'generate_chart' %}" hx-trigger="change" hx-target="#chart-container" name="2Y" id="2Y">
-                        <br>
-                        <label for="3Y">3Y</label>
-                        <input step="0.01" type="number" hx-post="{% url 'generate_chart' %}" hx-trigger="change" hx-target="#chart-container" name="3Y" id="3Y">
-                        <br>
-                        <label for="4Y">4Y</label>
-                        <input step="0.01" type="number" hx-post="{% url 'generate_chart' %}" hx-trigger="change" hx-target="#chart-container" name="4Y" id="4Y">
-                        <br>
-                        <label for="5Y">5Y</label>
-                        <input step="0.01" type="number" hx-post="{% url 'generate_chart' %}" hx-trigger="change" hx-target="#chart-container" name="5Y" id="5Y">
-                        <br>
-                        <label for="6Y">6Y</label>
-                        <input step="0.01" type="number" hx-post="{% url 'generate_chart' %}" hx-trigger="change" hx-target="#chart-container" name="6Y" id="6Y">
-                        <br>
-                        <label for="7Y">7Y</label>
-                        <input step="0.01" type="number" hx-post="{% url 'generate_chart' %}" hx-trigger="change" hx-target="#chart-container" name="7Y" id="7Y">
-                        <br>
-                        <label for="8Y">8Y</label>
-                        <input step="0.01" type="number" hx-post="{% url 'generate_chart' %}" hx-trigger="change" hx-target="#chart-container" name="8Y" id="8Y">
-                        <br>
-                        <label for="9Y">9Y</label>
-                        <input step="0.01" type="number" hx-post="{% url 'generate_chart' %}" hx-trigger="change" hx-target="#chart-container" name="9Y" id="9Y">
-                        <br>
-                        <label for="10Y">10Y</label>
-                        <input step="0.01" type="number" hx-post="{% url 'generate_chart' %}" hx-trigger="change" hx-target="#chart-container" name="10Y" id="10Y">
-                    </div>
+                    <label for="1Y">1Y</label>
+                    <input step="0.01" type="number" hx-post="{% url 'generate_chart' %}" hx-trigger="change" hx-target="#chart-container" name="1Y" id="1Y">
+                    <br>
+                    <label for="2Y">2Y</label>
+                    <input step="0.01" type="number" hx-post="{% url 'generate_chart' %}" hx-trigger="change" hx-target="#chart-container" name="2Y" id="2Y">
+                    <br>
+                    <label for="3Y">3Y</label>
+                    <input step="0.01" type="number" hx-post="{% url 'generate_chart' %}" hx-trigger="change" hx-target="#chart-container" name="3Y" id="3Y">
+                    <br>
+                    <label for="4Y">4Y</label>
+                    <input step="0.01" type="number" hx-post="{% url 'generate_chart' %}" hx-trigger="change" hx-target="#chart-container" name="4Y" id="4Y">
+                    <br>
+                    <label for="5Y">5Y</label>
+                    <input step="0.01" type="number" hx-post="{% url 'generate_chart' %}" hx-trigger="change" hx-target="#chart-container" name="5Y" id="5Y">
+                    <br>
+                    <label for="6Y">6Y</label>
+                    <input step="0.01" type="number" hx-post="{% url 'generate_chart' %}" hx-trigger="change" hx-target="#chart-container" name="6Y" id="6Y">
+                    <br>
+                    <label for="7Y">7Y</label>
+                    <input step="0.01" type="number" hx-post="{% url 'generate_chart' %}" hx-trigger="change" hx-target="#chart-container" name="7Y" id="7Y">
+                    <br>
+                    <label for="8Y">8Y</label>
+                    <input step="0.01" type="number" hx-post="{% url 'generate_chart' %}" hx-trigger="change" hx-target="#chart-container" name="8Y" id="8Y">
+                    <br>
+                    <label for="9Y">9Y</label>
+                    <input step="0.01" type="number" hx-post="{% url 'generate_chart' %}" hx-trigger="change" hx-target="#chart-container" name="9Y" id="9Y">
+                    <br>
+                    <label for="10Y">10Y</label>
+                    <input step="0.01" type="number" hx-post="{% url 'generate_chart' %}" hx-trigger="change" hx-target="#chart-container" name="10Y" id="10Y">
                 </form>
             </div>
 
-            <div class="col-md-9" id="chart-container">
+            <div class="col-8">
+                <div id="chart-container">
+            </div>
+
+
             </div> 
         </div>
         

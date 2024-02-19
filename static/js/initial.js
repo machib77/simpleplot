@@ -14,8 +14,8 @@ function initialRates() {
     }
 
     for (let key in init_obj) {
-        console.log(`Key: ${key}, Value: ${init_obj[key]}`)
-        document.getElementById(key).value = init_obj[key];
+        // console.log(`Key: ${key}, Value: ${parseFloat(init_obj[key]).toFixed(2)}`)
+        document.getElementById(key).value = parseFloat(init_obj[key]).toFixed(2);
     }
 
 
